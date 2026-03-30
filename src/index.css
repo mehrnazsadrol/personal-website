@@ -1,0 +1,83 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+}
+
+
+.section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.95s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.section.visible,
+.section.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger>* {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.stagger.reveal-visible>*:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.stagger.reveal-visible>*:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.stagger.reveal-visible>*:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.stagger.reveal-visible>*:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+.stagger.reveal-visible>*:nth-child(5) {
+  transition-delay: 0.45s;
+}
+
+.stagger.reveal-visible>*:nth-child(6) {
+  transition-delay: 0.55s;
+}
+
+.card {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(20, 240, 200, 0.25);
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  position: relative;
+}
